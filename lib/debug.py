@@ -6,4 +6,30 @@ from department import Department
 
 import ipdb
 
+Department.drop_table()
+Department.create_table()
+
+# payroll = Department("Payroll", "Building A, 5th Floor")
+payroll = Department.create("Payroll", "Building A, 5th Floor")
+print(payroll)
+
+# payroll.save()
+# print(payroll)
+
+# hr = Department("Human Recources", "Building C, East Wing")
+hr = Department.create("Human Recources", "Building C, East Wing") 
+print(hr)
+
+# hr.save()
+# print(hr)
+
+hr.name = 'HR'
+hr.location = "Building F, 10th Floor"
+hr.update()
+print(hr)
+
+print("Delete Payroll")
+payroll.delete()
+print(payroll)
+
 ipdb.set_trace()
